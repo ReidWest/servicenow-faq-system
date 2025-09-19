@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ Results{% endblock %}
+
+{% block content %}
+<div class="results-container">
+    <div class="back-to-search">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i> Ask Another Question
+        </a>
+    </div>
+    
+    <div class="question-display">
+        <h2><i class="fas fa-question"></i> Your Question:</h2>
+        <div class="question-text">{{ question }}</div>
+    </div>
+    
+    {% if multiple_answers %}
+    <!-- Multiple Answers Section -->
+    <div class="multiple-answers-intro">
+        <h3><i class="fas fa-lightbulb"></i> Multiple Topics Found:</h3>
+        <p>Your question covers multiple topics. Here are the relevant answers:</p>
+    </div>
+    
+    {% for item in multiple_answers %}
+    <div class="answer-display multiple-answer">
+        <h3><i class="fas fa-info-circle"></i> {{ item.topic }}:</h3>
+        <div class="answer-text">
+            {{ item.answer }}
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% else %}
+    <!-- Single Answer Section -->
+    <div class="answer-display {% if is_placeholder %}placeholder-answer{% endif %}">
+        <h3><i class="fas fa-{% if is_placeholder %}robot{% else %}lightbulb{% endif %}"></i> Answer:</h3>
+        <div class="answer-text">
+            {{ answer }}
+        </div>
+        
+        {% if is_placeholder %}
+        <div class="additional-help">
+            <p><strong>Still need help?</strong></p>
+            <ul>
+                <li>Try rephrasing your question with different keywords</li>
+                <li>Check our <a href="#" onclick="showPopularQuestions()">popular questions</a></li>
+                <li>Contact HR directly at +1 (866)-709-5932 or hr@company.com</li>
+                <li>Visit the HR office on the 3rd floor</li>
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+    
+    <!-- Search again form -->
+    <div class="search-again">
+        <h3>Ask Another Question</h3>
+        <form method="POST" action="/search" class="search-form">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    name="question" 
+                    placeholder="Type your next question here..." 
+                    class="search-input"
+                    autocomplete="off"
+                >
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="popular-questions-mini">
+        <h4>Common Topics:</h4>
+        <div class="topic-tags">
+            <span class="topic-tag" onclick="searchFor('password reset')">Password Reset</span>
+            <span class="topic-tag" onclick="searchFor('vacation policy')">Vacation Policy</span>
+            <span class="topic-tag" onclick="searchFor('W-2 forms')">W-2 Forms</span>
+            <span class="topic-tag" onclick="searchFor('health insurance')">Health Insurance</span>
+            <span class="topic-tag" onclick="searchFor('payroll')">Payroll</span>
+            <span class="topic-tag" onclick="searchFor('IT support')">IT Support</span>
+        </div>
+    </div>
+</div>
+
+<script>
+function searchFor(question) {
+    document.querySelector('.search-input').value = question;
+    document.querySelector('.search-form').submit();
+}
+
+function showPopularQuestions() {
+    window.location.href = '/';
+}
+</script>
+{% endblock %}

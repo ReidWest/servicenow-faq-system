@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Employee FAQ System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="{{ url_for('static', filename='images/servicenow-logo.svg') }}" alt="ServiceNow" class="servicenow-logo" onerror="this.style.display='none'">
+                    <div class="logo-fallback">ServiceNow</div>
+                </div>
+                <div class="title-section">
+                    <h1><i class="fas fa-question-circle"></i> Employee FAQ System</h1>
+                    <p>Find answers to your workplace questions</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Company Employee FAQ System. Need additional help? Contact HR at +1 (866)-709-5932</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Employee FAQ - Home{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <div class="search-box">
+        <h2>How can we help you today?</h2>
+        <form method="POST" action="/search" class="search-form">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    name="question" 
+                    placeholder="Type your question here... (ex: sick leave, dress code, parking)"
+                    required
+                    class="search-input"
+                    autocomplete="off"
+                >
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="popular-questions">
+        <h3>Popular Questions</h3>
+        <div class="question-grid">
+            <div class="question-card" onclick="searchFor('password reset')">
+                <i class="fas fa-key"></i>
+                <span>Password Reset</span>
+            </div>
+            <div class="question-card" onclick="searchFor('vacation policy')">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Vacation Policy</span>
+            </div>
+            <div class="question-card" onclick="searchFor('W-2 forms')">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>W-2 Forms</span>
+            </div>
+            <div class="question-card" onclick="searchFor('health insurance')">
+                <i class="fas fa-heartbeat"></i>
+                <span>Health Insurance</span>
+            </div>
+            <div class="question-card" onclick="searchFor('IT support')">
+                <i class="fas fa-laptop"></i>
+                <span>IT Support</span>
+            </div>
+            <div class="question-card" onclick="searchFor('HR contact')">
+                <i class="fas fa-users"></i>
+                <span>HR Contact</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function searchFor(question) {
+    document.querySelector('.search-input').value = question;
+    document.querySelector('.search-form').submit();
+}
+</script>
+{% endblock %}

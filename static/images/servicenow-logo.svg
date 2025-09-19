@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <defs>
+    <style>
+      .logo-text { font-family: 'Arial', sans-serif; font-weight: bold; fill: #0F4C3A; }
+      .service-text { font-size: 28px; }
+      .now-text { font-size: 28px; }
+      .logo-icon { fill: #62D84E; }
+    </style>
+  </defs>
+  
+  <!-- ServiceNow icon (simplified geometric representation) -->
+  <g class="logo-icon">
+    <circle cx="25" cy="40" r="15" opacity="0.8"/>
+    <circle cx="45" cy="25" r="12" opacity="0.9"/>
+    <circle cx="45" cy="55" r="12" opacity="0.9"/>
+    <path d="M35 35 L50 30 L50 50 Z" opacity="0.7"/>
+  </g>
+  
+  <!-- ServiceNow text -->
+  <text x="75" y="35" class="logo-text service-text">Service</text>
+  <text x="75" y="60" class="logo-text now-text">Now</text>
+</svg>
