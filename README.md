@@ -6,7 +6,15 @@
 
 A professional, ServiceNow-themed Employee FAQ web application built with Python Flask. Features intelligent keyword analysis, multi-topic search capabilities, and a responsive design that matches ServiceNow's brand identity.
 
-![ServiceNow FAQ Demo](https://via.placeholder.com/800x400/0F4C3A/62D84E?text=ServiceNow+FAQ+System)
+## 📸 Screenshots
+
+> **Note**: This is a local application. After installation, visit `http://localhost:8080` to see the live interface.
+
+**Features Preview:**
+- 🎨 ServiceNow-themed interface with professional branding
+- 🔍 Intelligent search with natural language support  
+- 📱 Responsive design that works on all devices
+- 🏢 Multi-topic answers for complex questions
 
 ## ✨ Features
 
@@ -39,7 +47,7 @@ The application can answer questions about:
 ### Option 1: Clone and Run (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/servicenow-faq-system.git
+git clone https://github.com/ReidWest/servicenow-faq-system.git
 cd servicenow-faq-system
 
 # Install dependencies
@@ -52,7 +60,7 @@ python app.py
 ### Option 2: One-Click Setup
 ```bash
 # Clone and install in one command
-git clone https://github.com/yourusername/servicenow-faq-system.git && cd servicenow-faq-system && pip install -r requirements.txt && python app.py
+git clone https://github.com/ReidWest/servicenow-faq-system.git && cd servicenow-faq-system && pip install -r requirements.txt && python app.py
 ```
 
 ## 📋 Installation
