@@ -6,8 +6,6 @@
 
 A professional, ServiceNow-themed Employee FAQ web application built with Python Flask. Features intelligent keyword analysis, multi-topic search capabilities, and a responsive design that matches ServiceNow's brand identity.
 
-## 📸 Screenshots
-
 > **Note**: This is a local application. After installation, visit `http://localhost:8080` to see the live interface.
 
 **Features Preview:**
@@ -105,11 +103,11 @@ git clone https://github.com/ReidWest/servicenow-faq-system.git && cd servicenow
 
 2. **Open your web browser** and navigate to:
    ```
-   http://localhost:5000
+   http://localhost:8080
    ```
    or
    ```
-   http://127.0.0.1:5000
+   http://127.0.0.1:8080
    ```
 
 3. **Use the application**:
@@ -190,9 +188,9 @@ Modify `static/css/style.css` to change the appearance of the application.
 
 ### Common Issues
 
-1. **Port already in use**: If port 5000 is occupied, modify the port in `app.py`:
+1. **Port already in use**: If port 8080 is occupied, modify the port in `app.py`:
    ```python
-   app.run(debug=True, host='127.0.0.1', port=5001)
+   app.run(debug=True, host='127.0.0.1', port=8081)
    ```
 
 2. **Module not found errors**: Ensure virtual environment is activated and dependencies are installed:
